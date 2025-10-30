@@ -18,39 +18,3 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-async function getRandomJoke() {
-    return fetch('https://icanhazdadjoke.com/', {
-        headers: {
-            'Accept': 'text/plain'
-        }
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.text();
-    })
-    .catch(error => {
-        console.error('There was a problem fetching the joke:', error);
-        return "Failed to fetch a joke. Please try again later.";
-    });
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-    const jokeButton = document.getElementById("joke-button");
-    if (!jokeButton) {
-        console.error("Button with ID 'joke-button' not found.");
-        return;
-    }
-    jokeButton.addEventListener("click", async function() {
-
-            const jokeDisplay = document.getElementById("joke-display");
-            if (!jokeDisplay) {
-                console.error("Element with ID 'joke-display' not found.");
-                return;
-            }
-            jokeDisplay.textContent = "Loading joke...";
-            const joke = await getRandomJoke();
-            jokeDisplay.textContent = joke;
-    });
-});
