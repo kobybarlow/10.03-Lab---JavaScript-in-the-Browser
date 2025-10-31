@@ -9,38 +9,51 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<form>
 <body>
+<form id="lineupForm">
   <h1>Starting Lineup</h1>
+
 <fieldset>
   <legend>Status: </legend>
-  <input type="radio" value="status" name="status">Draft</button>
-  <input type="radio" value="status" name="status" checked>Final</button>
-  
+  <label><input type="radio" name="status" value="Draft">Draft</label>
+  <label><input type="radio" name="status" value="Final" checked>Final</label>
 </fieldset>
 
-<form id='form2'>
-  <select width="100" style="width:100px" size="8" multiple>
-    <option value="Date1">March 20</option>
-    <option value="Date2">March 24</option>
-    <option value="Date3">April 2</option>
-    <option value="Date4">April 6</option>
-    <option value="Date5">April 13</option>
+<div class="Datesrow">
+  <label for="Dates">Date: </label>
+  <select name="Dates" id="Dates">
+    <option value="March 20">March 20</option>
+    <option value="March 24">March 24</option>
+    <option value="April 2">April 2</option>
+    <option value="April 6">April 6</option>
+    <option value="April 13">April 13</option>
   </select>
-</form>
+</div>
 
+<p>
 <fieldset>
   <legend>Players:</legend>
   <ul>
-    <input type="checkbox">Aarav Argawal</button><br>
-    <input type="checkbox">Ava Johnson</button><br>
-    <input type="checkbox">Julio Ortiz</button><br>
-    <input type="checkbox">Liam Rubio</button><br>
-    <input type="checkbox">Emma Witherspoon</button>
+    <label><input type="checkbox" name="players" value="Aarav Argawal">Aarav Argawal</label><br>
+    <label><input type="checkbox" name="players" value="Ava Johnson">Ava Johnson</label><br>
+    <label><input type="checkbox" name="players" value="Julio Ortiz">Julio Ortiz</label><br>
+    <label><input type="checkbox" name="players" value="Liam Rubio">Liam Rubio</label><br>
+    <label><input type="checkbox" name="players" value="Emma Witherspoon">Emma Witherspoon</label>
   </ul>
 </fieldset>
+</p>
+
+
+
+<div class="subbutton">
+<input type="submit" value="Submit">
 </div>
-</body>
+
+<p id="Output"></p>
+
 </form>
 
+<script src="script.js"></script>
+
+</body>
 </html>
